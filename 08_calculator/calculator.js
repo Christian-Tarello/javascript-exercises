@@ -15,8 +15,12 @@ const sum = function(sequence) {
 	
 };
 
-const multiply = function() {
-
+const multiply = function(sequence) {
+  let result = sequence[0];
+  for (let i = 1; i<sequence.length;i++){
+    result*=sequence[i];
+  }
+  return result;
 };
 
 const power = function() {
