@@ -6,7 +6,12 @@ const subtract = function(a,b) {
 	return a-b;
 };
 
-const sum = function() {
+const sum = function(sequence) {
+  let finalSum = 0;
+  for (let i = 0; i<sequence.length;i++){
+    finalSum+=sequence[i];
+  }
+  return finalSum;
 	
 };
 
