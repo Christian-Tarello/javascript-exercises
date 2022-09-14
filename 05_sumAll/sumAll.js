@@ -1,4 +1,10 @@
 const sumAll = function(firstNum, secondNum) {
+    if (typeof firstNum !== "number" || typeof secondNum !== "number"){
+        return "ERROR";
+    } else if (firstNum<0 || secondNum<0){
+        return "ERROR";
+    }
+    
     let startNum;
     let endNum;
 
