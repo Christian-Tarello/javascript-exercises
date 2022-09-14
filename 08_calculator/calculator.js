@@ -23,8 +23,8 @@ const multiply = function(sequence) {
   return result;
 };
 
-const power = function() {
-	
+const power = function(num, index) {
+  return Math.pow(num, index);	
 };
 
 const factorial = function() {
