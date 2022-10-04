@@ -16,10 +16,7 @@ const sum = function(sequence) {
 };
 
 const multiply = function(sequence) {
-  let result = sequence[0];
-  for (let i = 1; i<sequence.length;i++){
-    result*=sequence[i];
-  }
+  let result = sequence.reduce((lastNumber, currentNumber) => {return lastNumber*currentNumber;}, 1);
   return result;
 };
 
