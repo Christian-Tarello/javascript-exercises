@@ -1,8 +1,5 @@
 const getTheTitles = function(array) {
-    let result = [];
-    array.forEach(function(object){
-        result.push(object.title);
-    });
+    let result = array.map((object) => object.title);
     return result;
 };
 
