@@ -1,17 +1,20 @@
 const findTheOldest = function(people) {
-
-    let oldestAge = 0;
-    let oldestPerson;
     const today = new Date();
-    const thisYear = today.getFullYear()
-    people.forEach(function(person){
-        const lastYear = person.yearOfDeath || thisYear;
-        const age = lastYear-person.yearOfBirth;
-        if (age>oldestAge){
-            oldestAge = age;
-            oldestPerson = person;
+    const thisYear = today.getFullYear();
+
+    let oldestPerson = people.reduce((lastPerson, currentPerson) => {
+        const currentPersonLastYear = currentPerson.yearOfDeath || thisYear;
+        const currentPersonAge = currentPersonLastYear-currentPerson.yearOfBirth;
+
+        const lastPersonLastYear = lastPerson.yearOfDeath || thisYear;
+        const lastPersonAge = lastPersonLastYear-lastPerson.yearOfBirth;
+
+        if (lastPersonAge<currentPersonAge) {
+            return currentPerson;
         }
+        return lastPerson;
     });
+
     return oldestPerson;
 };
 
